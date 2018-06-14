@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tarea2;
 
 import java.util.ArrayList;
@@ -13,24 +8,46 @@ import java.util.ArrayList;
  */
 public class Tarea2 {
 
-    
     public static void main(String[] args) {
-        Carro micarro = new Carro ("Mazda",1990,100);
-        Carro micarro2 = new Carro ("Toyota",1986,100);
-        Carro micarro3 = new Carro ("Jeep",1986,100);
-        ArrayList <Carro> carsList = new ArrayList <>();
-        carsList.add(micarro);
-        carsList.add(micarro2);
-        carsList.add(micarro3);
-        while ((micarro.getAdvanced_Meters()<1000)&&(micarro2.getAdvanced_Meters()<1000)&&(micarro3.getAdvanced_Meters()<1000)){
-            micarro.race();
-            micarro2.race();
-            micarro3.race();
+        Carro mycar = new Carro("Mazda", 1990, 100);
+        Carro mycar2 = new Carro("Toyota", 1986, 100);
+        Carro mycar3 = new Carro("Jeep", 1986, 100);
+        ArrayList<Carro> carList = new ArrayList<>();
+        carList.add(mycar);
+        carList.add(mycar2);
+        carList.add(mycar3);
+        int round = 1;
+        while ((mycar.getAdvanced_Meters() < 1000) && (mycar2.getAdvanced_Meters() < 1000) && (mycar3.getAdvanced_Meters() < 1000)) {
+            System.out.println("Vuelta numero: " + round);
+            mycar.race();
+            mycar2.race();
+            mycar3.race();
+            round++;
+            System.out.println("");
         }
-        for (int i =0;i<carsList.size();i++){
-            if (carsList.get(i).getAdvanced_Meters()>=1000){
-                System.out.println("El carro ganador es: "+carsList.get(i).getBrand());
+        for (int i = 0; i < carList.size(); i++) {
+            if (i == 0) {
+                int j = i + 1;
+                int k = i + 2;
+                if (carList.get(i).getAdvanced_Meters() > carList.get(j).getAdvanced_Meters() && carList.get(i).getAdvanced_Meters() > carList.get(k).getAdvanced_Meters()) {
+                    System.out.println("El carro ganador es: " + mycar.getBrand());
+                }
             }
+            if (i == 1) {
+                int j = i - 1;
+                int k = i + 1;
+                if (carList.get(i).getAdvanced_Meters() > carList.get(j).getAdvanced_Meters() && carList.get(i).getAdvanced_Meters() > carList.get(k).getAdvanced_Meters()) {
+                    System.out.println("El carro ganador es: " + mycar2.getBrand());
+                }
+            }
+            if (i == 2) {
+                int j = i - 1;
+                int k = i - 2;
+                if (carList.get(i).getAdvanced_Meters() > carList.get(j).getAdvanced_Meters() && carList.get(i).getAdvanced_Meters() > carList.get(k).getAdvanced_Meters()) {
+                    System.out.println("El carro ganador es: " + mycar3.getBrand());
+                }
+            }
+
+        }
     }
-    
 }

@@ -10,16 +10,17 @@ package tarea2;
  * @author PJ129
  */
 public class Carro {
-   private String brand;
-   private int year;
-   private int horse_power;
-   private int Advanced_Meters;
-   
+
+    private String brand;
+    private int year;
+    private int horse_power;
+    private int Advanced_Meters;
+
     public Carro(String brand, int year, int horse_power) {
         this.brand = brand;
         this.year = year;
         this.horse_power = horse_power;
-        this.Advanced_Meters=0;
+        this.Advanced_Meters = 0;
     }
 
     public String getBrand() {
@@ -53,10 +54,10 @@ public class Carro {
     public void setAdvanced_Meters(int Advanced_Meters) {
         this.Advanced_Meters = Advanced_Meters;
     }
-   
-    public void race (){
-        Advanced_Meters = Advanced_Meters +((int)(Math.random()*2)*this.horse_power); 
-}
-    
-   
+
+    public void race() {
+        Advanced_Meters = Advanced_Meters + ((int) (Math.random() * 2) * this.horse_power);
+        System.out.println("El carro de marca: " + this.brand + " ha avanzado: " + this.Advanced_Meters + " metros");
+    }
+
 }
