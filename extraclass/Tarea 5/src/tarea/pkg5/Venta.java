@@ -122,7 +122,6 @@ public class Venta extends javax.swing.JFrame {
         String name = jTextField1.getText();
         char passwordList [] = jPasswordField3.getPassword();
         String password = new String (passwordList);
-            System.out.println(password);
         if (logica.verifyInfo(name, password)){
             jLabel4.setVisible(true);
             jLabel4.setText("Usuario Aceptado");
